@@ -169,8 +169,7 @@ img{display:block;max-width:100%}
 /* ── Ads column ───────────────────────────────────────── */
 .ads-col{position:relative;z-index:101;display:flex;flex-direction:column;flex-shrink:0;padding:12px;height:100%;background:#fff;overflow:hidden}
 .ads-sticky{position:sticky;top:0;display:flex;flex-direction:column;gap:10px}
-.ad-slot{width:300px;height:250px;background:var(--surface-secondary);overflow:hidden;display:flex;align-items:center;justify-content:center;color:#aaa;font-size:13px;border-radius:6px}
-.ad-slot--tall{width:300px;height:600px;background:var(--surface-secondary);overflow:hidden;display:flex;align-items:center;justify-content:center;color:#aaa;font-size:13px;border-radius:6px}
+.ad-slot{width:300px;overflow:hidden;display:flex;align-items:center;justify-content:center;border-radius:6px}
 
 /* ── SVG icons (inline) ───────────────────────────────── */
 .icon{display:inline-flex;align-items:center;justify-content:center}
@@ -468,8 +467,9 @@ img{display:block;max-width:100%}
     <!-- ═══ ADS COLUMN ═══ -->
     <div class="ads-col">
       <div class="ads-sticky">
-        <div class="ad-slot">Ad 300×250</div>
-        <div class="ad-slot--tall">Masthead 300×600</div>
+        <div class="ad-slot"><img src="ad-1.png" alt="" width="300" height="250" style="width:100%;height:auto;display:block;border-radius:6px"/></div>
+        <div class="ad-slot"><img src="ad-2.png" alt="" width="300" height="250" style="width:100%;height:auto;display:block;border-radius:6px"/></div>
+        <div class="ad-slot"><img src="ad-3.png" alt="" width="300" height="250" style="width:100%;height:auto;display:block;border-radius:6px"/></div>
       </div>
     </div>
 
