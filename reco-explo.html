@@ -156,12 +156,14 @@ img{display:block;max-width:100%}
 .reco__grid{display:flex;gap:12px}
 .reco__col{display:flex;flex:1;flex-direction:column;gap:12px;min-width:0}
 
-/* ── Video card portrait ──────────────────────────────── */
-.vcard{position:relative;display:block;overflow:hidden;background:var(--surface-secondary);border-radius:9px;aspect-ratio:142/170}
+/* ── Video card portrait (thumb + duration — Figma WEB · Videocard redesign) ─ */
+.vcard{--video-card-info-overlay-height:108px;position:relative;display:block;overflow:hidden;background:var(--surface-secondary);border-radius:9px;aspect-ratio:142/170}
 .vcard:hover .vcard__thumb img{transform:scale(1.03)}
-.vcard__thumb{position:absolute;inset:0;overflow:hidden}
-.vcard__thumb img{width:100%;height:100%;object-fit:cover;transition:transform .25s}
-.vcard__info{position:absolute;right:0;bottom:0;left:0;display:flex;flex-direction:column;gap:4px;justify-content:flex-end;height:108px;padding:12px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,.85) 40%);border-bottom:1px solid #dedbda;backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}
+.vcard__thumb{position:absolute;inset:0;overflow:hidden;border-radius:9px}
+.vcard__thumb img{width:100%;height:100%;object-fit:cover;border-radius:inherit;pointer-events:none;transition:transform .25s}
+.vcard__duration{position:absolute;left:8px;bottom:calc(var(--video-card-info-overlay-height) + 8px);display:flex;align-items:center;min-height:20px;padding:2px 8px;border-radius:16777200px;background:rgba(13,13,13,.6)}
+.vcard__duration-text{color:#fff;font-size:12px;font-weight:400;line-height:16px;white-space:nowrap}
+.vcard__info{position:absolute;right:0;bottom:0;left:0;display:flex;flex-direction:column;gap:4px;justify-content:flex-end;height:var(--video-card-info-overlay-height);padding:12px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,.85) 40%);border-bottom:1px solid #dedbda;backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}
 .vcard__title{display:-webkit-box;overflow:hidden;color:var(--smokey-black);font-size:14px;font-weight:700;line-height:20px;white-space:pre-wrap;-webkit-box-orient:vertical;-webkit-line-clamp:2}
 .vcard__channel{display:flex;gap:4px;align-items:center}
 .vcard__channel-name{overflow:hidden;color:var(--smokey-black);font-size:12px;font-weight:700;line-height:16px;text-overflow:ellipsis;white-space:nowrap}
@@ -369,7 +371,7 @@ img{display:block;max-width:100%}
                       <!-- Column 1 -->
                       <div class="reco__col">
                         <a href="#" class="vcard">
-                          <div class="vcard__thumb"><img src="https://picsum.photos/id/237/320/380" alt=""/></div>
+                          <div class="vcard__thumb"><img src="https://picsum.photos/id/237/320/380" alt=""/><div class="vcard__duration" aria-hidden="true"><span class="vcard__duration-text">0:34</span></div></div>
                           <div class="vcard__info">
                             <div class="vcard__title">Joe Keery en 1ère partie des concerts de Harry Styles ⁉️😍</div>
                             <div class="vcard__channel">
@@ -379,7 +381,7 @@ img{display:block;max-width:100%}
                           </div>
                         </a>
                         <a href="#" class="vcard">
-                          <div class="vcard__thumb"><img src="https://picsum.photos/id/239/320/380" alt=""/></div>
+                          <div class="vcard__thumb"><img src="https://picsum.photos/id/239/320/380" alt=""/><div class="vcard__duration" aria-hidden="true"><span class="vcard__duration-text">1:05</span></div></div>
                           <div class="vcard__info">
                             <div class="vcard__title">Mastu, le youtubeur numero 1 de 2022</div>
                             <div class="vcard__channel">
@@ -389,7 +391,7 @@ img{display:block;max-width:100%}
                           </div>
                         </a>
                         <a href="#" class="vcard">
-                          <div class="vcard__thumb"><img src="https://picsum.photos/id/244/320/380" alt=""/></div>
+                          <div class="vcard__thumb"><img src="https://picsum.photos/id/244/320/380" alt=""/><div class="vcard__duration" aria-hidden="true"><span class="vcard__duration-text">12:08</span></div></div>
                           <div class="vcard__info">
                             <div class="vcard__title">Trying Street Food From 9 Countries Across The World</div>
                             <div class="vcard__channel">
@@ -399,7 +401,7 @@ img{display:block;max-width:100%}
                           </div>
                         </a>
                         <a href="#" class="vcard">
-                          <div class="vcard__thumb"><img src="https://picsum.photos/id/250/320/380" alt=""/></div>
+                          <div class="vcard__thumb"><img src="https://picsum.photos/id/250/320/380" alt=""/><div class="vcard__duration" aria-hidden="true"><span class="vcard__duration-text">0:58</span></div></div>
                           <div class="vcard__info">
                             <div class="vcard__title">Trying Street Food From 9 Countries Across The World</div>
                             <div class="vcard__channel">
@@ -412,7 +414,7 @@ img{display:block;max-width:100%}
                       <!-- Column 2 -->
                       <div class="reco__col">
                         <a href="#" class="vcard">
-                          <div class="vcard__thumb"><img src="https://picsum.photos/id/257/320/380" alt=""/></div>
+                          <div class="vcard__thumb"><img src="https://picsum.photos/id/257/320/380" alt=""/><div class="vcard__duration" aria-hidden="true"><span class="vcard__duration-text">3:21</span></div></div>
                           <div class="vcard__info">
                             <div class="vcard__title">The NBA Should FEAR The Denver Nuggets</div>
                             <div class="vcard__channel">
@@ -422,7 +424,7 @@ img{display:block;max-width:100%}
                           </div>
                         </a>
                         <a href="#" class="vcard">
-                          <div class="vcard__thumb"><img src="https://picsum.photos/id/274/320/380" alt=""/></div>
+                          <div class="vcard__thumb"><img src="https://picsum.photos/id/274/320/380" alt=""/><div class="vcard__duration" aria-hidden="true"><span class="vcard__duration-text">0:12</span></div></div>
                           <div class="vcard__info">
                             <div class="vcard__title">Trying Street Food From 9 Countries Across The World</div>
                             <div class="vcard__channel">
@@ -432,7 +434,7 @@ img{display:block;max-width:100%}
                           </div>
                         </a>
                         <a href="#" class="vcard">
-                          <div class="vcard__thumb"><img src="https://picsum.photos/id/292/320/380" alt=""/></div>
+                          <div class="vcard__thumb"><img src="https://picsum.photos/id/292/320/380" alt=""/><div class="vcard__duration" aria-hidden="true"><span class="vcard__duration-text">45:02</span></div></div>
                           <div class="vcard__info">
                             <div class="vcard__title">Trying Street Food From 9 Countries Across The World</div>
                             <div class="vcard__channel">
@@ -442,7 +444,7 @@ img{display:block;max-width:100%}
                           </div>
                         </a>
                         <a href="#" class="vcard">
-                          <div class="vcard__thumb"><img src="https://picsum.photos/id/301/320/380" alt=""/></div>
+                          <div class="vcard__thumb"><img src="https://picsum.photos/id/301/320/380" alt=""/><div class="vcard__duration" aria-hidden="true"><span class="vcard__duration-text">2:45</span></div></div>
                           <div class="vcard__info">
                             <div class="vcard__title">Autisme, phobie, anxiété : la puissance insoupçonnée de l'équithérapie</div>
                             <div class="vcard__channel">
